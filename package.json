@@ -8,6 +8,7 @@
     "build": "rimraf dist && npm run elm-typescript-interop && webpack",
     "start-dev": "npm run build && electron dist/main.js",
     "package": "NODE_ENV=production npm run build && electron-packager dist sample --platform=darwin --arch=x64 --overwrite --electron-version 2.0.2",
+    "format": "tslint --fix webpack.config.ts main/**/*.ts renderer/**/*.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
