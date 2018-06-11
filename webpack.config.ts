@@ -12,7 +12,7 @@ const resolve = (s: string): string => path.resolve(__dirname, s)
 const common: webpack.Configuration = {
   devtool: 'source-map',
   resolve: {
-    extensions: ['.ts']
+    extensions: ['.ts', '.js']
   },
   output: {
     filename: '[name].js',
@@ -75,6 +75,11 @@ const renderer: webpack.Configuration = {
             name: '[name].[ext]'
           }
         }
+      },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        loaders: ['style-loader', 'css-loader']
       }
     ]
   },
